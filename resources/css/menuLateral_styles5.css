@@ -1,0 +1,85 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-box-sizing: border-box;  
+    text-decoration:none;
+    /* agregar font familis */
+}
+body{
+    margin-left:70px;
+}
+
+.menu_lateral{
+    display:flex;
+    flex-direction:column;
+    background-color:#2B0327;
+    position:fixed;
+    height:100%;
+    left:0px;
+    top:0px;
+    width:70px;
+    z-index:310;
+    top:0;
+    left:0;
+    color:#F2F2F2;
+    /* overflow:hidden; */
+    /* border:10px solid #2B0327; */
+    /* height:100vh; */
+
+    /* margin-top:63px; */
+}
+.cont_logo_tecnm_engrane{
+    display:flex;
+    /* justify-content:center; */
+    align-items:center;
+    /* border-bottom:2px solid #36FF21; */
+    border-bottom:2px solid #1B396A;
+    width:85%;
+    /* padding:7px; */
+    margin:0 auto 20px auto;
+    
+    
+}
+.logo_engrane_tecnm{
+    width:35px;
+    margin:20px;
+}
+.titulo_tecnm_menu_lateral{
+    font-size:17px;
+    text-align:center;
+}
+.titulos_menu_lateral{
+    color:#F2F2F2;
+}
+
+
+.iconos_menu_lateral{
+    width:20px;
+    margin:20px;
+}
+.cont_icono_titulo_menu_lat{
+    width:95%;
+    margin:0 auto;
+    display:flex;
+    /* justify-content:center; */
+    align-items:center;
+    
+}
+.cont_icono_titulo_menu_lat:hover{
+    background-color:#1B396A;
+  
+}
+.cont_menu_selected{
+    border-left:3px solid #F2F2F2;
+
+}
+.texto_menu_selected{
+
+}
+.icono_menu_selected{
+
+}
+.titulo_menu_lat_js{
+    display:none;
+}
