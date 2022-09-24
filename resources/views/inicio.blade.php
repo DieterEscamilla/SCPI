@@ -10,6 +10,6 @@
 @endsection
 @section('main')
     <p>Ésta es la página de inicio</p>
-    <a href="{{route('create.alumno')}}">Agregar un nuevo alumno</a>
-    <a href="{{route('create.profesor')}}">Agregar un nuevo profesor</a>
+    <a href="{{route('alumnos.show')}}">Ver alumnos</a>
+    <a href="{{route('profesores.show')}}">Ver profesores</a>
 @endsection
