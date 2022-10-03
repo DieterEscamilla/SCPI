@@ -14,6 +14,8 @@ class CreateProfesoresTable extends Migration
     public function up()        
     {
         Schema::create('profesores', function (Blueprint $table) {/*FK DE USUARIO. Puede ser el número de tarjeta si es único */
+            $table->unsignedBigInteger('numeroTarjeta')->unique();
+            $table->foreign('numeroTarjeta')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('nombre',40);
             $table->string('primerApellido',60);
             $table->string('segundoApellido',60);

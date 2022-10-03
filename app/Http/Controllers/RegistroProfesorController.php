@@ -29,6 +29,11 @@ class RegistroProfesorController extends Controller
         'password'=>'required|confirmed|max:100|min:8',
         'password_confirmation'=>'required|max:100|min:8'
     ]);
+    $usuario->id=$request->id;
+    $usuario->email=$request->email;
+    $usuario->password=bcrypt($request->password);
+    $usuario->tipoUsuario=1;
+    $profesor->numeroTarjeta=$request->id;
     $profesor->nombre=$request->nombre;
     $profesor->primerApellido=$request->prim_apellido;
     $profesor->segundoApellido=$request->seg_apellido;
@@ -38,12 +43,8 @@ class RegistroProfesorController extends Controller
     $profesor->gradoEscolar=$request->grado_escolar;
     $profesor->rfc=$request->rfc;
     $profesor->fechaIngresoInstitucion=$request->fecha_ingreso_institucion;
-    $usuario->id=$request->id;
-    $usuario->email=$request->email;
-    $usuario->password=bcrypt($request->password);
-    $usuario->tipoUsuario=1;
-    $profesor->save();
     $usuario->save();
-    return redirect()->route('inicio');
+    $profesor->save();
+    return redirect()->route('profesores.show');
     }
 }

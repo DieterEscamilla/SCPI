@@ -1,0 +1,117 @@
+.cont_tabla{
+
+}
+.tabla{
+    border-collapse:collapse;
+    margin:30px auto;
+    width:90%;
+}
+.cabecera_tabla{
+    background-color:#1B396A;
+    color:#F2F2F2;
+    /* border-radius:10px 10px 0 0;
+    border:1px solid #1B396A; */
+}
+.tdh{
+    padding:7px;
+    border-bottom:3px solid #048021;
+    text-align:center;
+
+}
+.tdb{
+    padding:7px;
+    border:1px solid #000;
+    background:#E8E4E4;
+    text-align:center;
+}
+.campo_cabecera_tabla_izquierdo{
+    border-radius:10px 0 0 0;
+}
+.campo_cabecera_tabla_derecho{
+    border-radius:0 10px 0 0;
+}
+.fila_boton_agregar{
+    padding:10px;
+
+}
+.btn_agregar_tabla{
+    padding:10px 15px;
+    background-color:#1B396A;
+    color:#F2F2F2;
+    font-size:16px;
+    outline:none;
+    border:1px solid #048021;
+    border-radius:10px;
+    cursor:pointer;
+}
+.btn_agregar_tabla:hover{
+    background:#FEAA02;
+    color:#000;
+    border:1px solid #FEAA02;
+}
+.iconos_acciones_tabla{
+    width:20px;
+    cursor:pointer;
+    margin:auto 7px;
+}
+.elementos_ocultos_tabla{
+    display:none;
+}
+.overlay_ver_detalles{
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background-color:rgba(0,0,0,.7);
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+.modal_ver_detalles{
+    background:#E6E6E6;
+    border:1px solid #1B396A;
+    box-shadow:3px 3px 10px;
+    border-radius:10px;
+    overflow-y:scroll;
+    padding:50px;
+    height:500px;
+}
+.titulo_modal_tabla{
+    margin:0 auto;
+    width:90%;
+    text-align:center;
+    border-bottom:2px solid #FEAA02;
+}
+.lbl_key_modal_datos_tabla{
+    text-decoration:underline #1B396A;
+}
+.cont_key_dato_modal_tabla{
+    margin:25px auto;
+}
+.cont_btn_color_cerrar_detalles{
+    display:flex;
+    justify-content:flex-end;
+    width:100%;
+}
+.btn_cerrar_modal_tabla{
+    width:15px;
+    cursor:pointer;
+}
+.cont_btn_rectangulo_cerrar_modal_detalles{
+    text-align:center;
+}
+.btn_rectangulo_cerrar_modal_detalles{
+    border-radius:7px;
+    color:#000;
+    padding:10px 30px;
+    border:none;
+    font-size:16px;
+    cursor:pointer;
+    background-color:#3BCF2C;
+    margin-right:25px;
+}
+.btn_rectangulo_cerrar_modal_detalles:hover{
+    background-color:#0F8204;
+    color:#F2F2F2;
+}

@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 Route::get('inicio',function(){
     return view('inicio');
-})->name('inicio')->middleware('auth');
+})->name('inicio');
 // ->middleware('auth')->middleware('guest');
 // Route::get('login',function(){
 //     return view('auth.login');
@@ -36,6 +36,7 @@ Route::get('nuevo-profesor',[RegistroProfesorController::class,'show'])->name('p
 Route::post('nuevo-profesor',[RegistroProfesorController::class,'store'])->name('profregistro.store');
 Route::get('nuevo-alumno',[RegistroAlumnoController::class,'show'])->name('alumnoregistro.show');
 Route::post('nuevo-alumno',[RegistroAlumnoController::class,'store'])->name('alumnoregistro.store');
+Route::put('editar-alumno',[RegistroAlumnoController::class,'update'])->name('alumnos.update');
 Route::get('mostrar-profesores',[VerProfesorController::class,'index'])->name('profesores.show');
 Route::get('mostrar-alumnos',[VerAlumnosController::class,'index'])->name('alumnos.show');
 Route::get('login',[LoginController::class,'show'])->name('login');

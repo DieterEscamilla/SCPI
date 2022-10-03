@@ -15,6 +15,10 @@
         @yield('main')
     </main>
     {{-- @yield('body') --}}
-    <script src="{{asset('../resources/js/menuLateral_scripts2.js')}}"></script>
+    {{-- <script src="{{asset('../resources/js/menuLateral_scripts2.js')}}"></script>
+    <script src="{{asset('../resources/js/alumno_scripts.js')}}"></script> --}}
+    <div class="scripts">
+        @yield('scripts')
+    </div> 
 </body>
 </html>

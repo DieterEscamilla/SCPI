@@ -13,3 +13,6 @@
     <a href="{{route('alumnos.show')}}">Ver alumnos</a>
     <a href="{{route('profesores.show')}}">Ver profesores</a>
 @endsection
+@section('scripts')
+    <script src="{{asset('../resources/js/menuLateral_scripts2.js')}}"></script>
+@endsection

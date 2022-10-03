@@ -13,7 +13,7 @@ body{
     justify-content: center;
     align-items:center;
     flex-direction:column;
-    height:14vh;
+    height:15vh;
 }
 .h1{
     color:#F3F3F3;
@@ -26,21 +26,20 @@ body{
     justify-content:center;
     align-items:center;
     width:100vw;
-    height:86vh;
+    height:85vh;
 }
 .formulario{
     display:flex;
-    justify-content:center;
+    justify-content:flex-start;
     align-items:center;
     flex-direction:column;
     width:500px;
-    height:390px;
+    /* height:430px; */
     background:url(../img/img_fondo_formulario_sombreada.png) no-repeat center center;
     background-size: 250px;
     border-radius:10px;
-    /* border:5px solid #F2F2F2; */
     border:5px solid #1B396A;
-    box-shadow:#F2F2F2 1px 1px 25px;
+    box-shadow:#F2F2F2 1px 1px 15px;
 }
 .cont_img_logo_tecnm{
     display:flex;
@@ -52,7 +51,6 @@ body{
     margin-bottom:-50px;
 }
 .img_logo_itat{
-    /* margin-top:50px; */
     width:70px;
     background:rgba(0,0,0,.5);
 }
@@ -67,7 +65,7 @@ body{
 }
 
 .grupo_lbl_input{
-    margin-bottom:25px;
+    margin-top:40px;
 }
 .lbl_input{
     color:#F2F2F2;
@@ -94,7 +92,7 @@ body{
 }
 .input:focus{
     /* border:2px solid #0070C0; */
-    border:2px solid #0F9B00;
+    border:2px solid #048021;
 }
 .div_icono_input{
     display:flex;
@@ -110,7 +108,7 @@ body{
     border-bottom:2px solid #1B396A;
 }
 .contenedor_button_submit{
-    margin-top:30px;
+    margin-top:10px;
 }
 .btn_iniciar_sesion{
     width:240px;
@@ -126,26 +124,42 @@ body{
 }
 .btn_iniciar_sesion:hover{
     /* background-color:#0070C0; */
-    background-color:#0F9B00;
+    background-color:#048021;
 }
-.leyenda_no_tienes_cuenta{
+.leyenda_no_recuperar_contrasena{
     color:#F3F3F3;
     margin:20px;
 }
-.contenedor_opcion_registro{
+.contenedor_recuperar_contrasena{
     display:flex;
     justify-content:center;
-    flex-direction:column;
     align-items:center;
 }
-.enlace_registro{
+.enlace_recuperar_contrasena{
     text-decoration:none;
     color:#0070C0;
+}
+.enlace_recuperar_contrasena:hover{
+    color:#F3F3F3;
 }
 .enlace_registro:hover{
     color:#C0A900;
 }
+.cerrar_label_error_login{
+    width:10px;
+    cursor:pointer;
+}
 .img_icono_input{
     width:27px;
     height:27px;
+}
+.mensaje_error_form{
+    display:flex;
+    justify-content:space-between;
+    width:80%;
+    padding:7px;
+    margin:7 auto;
+    background:#FF4747;
+    border-radius:7px;
+    font-size:16px;
 }

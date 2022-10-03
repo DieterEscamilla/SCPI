@@ -24,12 +24,15 @@ main{
     flex-direction:column;
     margin:30px auto;
     padding:50px;
-    width:85%;
+    width:80%;
+    height:80%;
+    /* width:85%; */
     /* border-top:2px solid #1B396A; */
     background:#E6E6E6;
     border:1px solid #1B396A;
     box-shadow:3px 3px 10px;
     border-radius:10px;
+    overflow-y:scroll;
 }
 .tira_provisional_inputs{
     display:flex;
@@ -86,4 +89,25 @@ main{
 .btn_cancelar:hover{
     background-color:#940808;
     color:#F2F2F2;
+}
+.overlay{
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background-color:rgba(0,0,0,.7);
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+.cont_titulo_form_agreagr{
+    display:flex;
+    justify-content: space-between;
+    background-color:#E6E6E6;
+    margin-bottom:30px;
+}
+.icono_cerrar_form{
+    width:15px;
+    cursor:pointer;
 }

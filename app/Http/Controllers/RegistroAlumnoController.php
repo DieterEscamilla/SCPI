@@ -14,20 +14,6 @@ class RegistroAlumnoController extends Controller
     public function store(Request $request){
         $alumno=new Alumno();
         $usuario=new User(); 
-        // $request->validate([
-        //     'nro_control'=>['required'],
-        //     'name'=>['required','string','max:40'],
-        //     // 'email'=>['required','string','email','max:200','unique:users'],
-        //     'correo'=>['required','string','email','max:200'],
-        //     'prim_apellido'=>['required','string','max:60'],
-        //     'seg_apellido'=>['required','string','max:60'],
-        //     // 'fecha_ingreso_escuela'=>['required','date'],
-        //     // 'fecha_nacimiento'=>['required','date'],
-        //     // 'carrera'=>['required','string'],
-        //     'password'=>['required']
-        //     // Rules\Password::defaults()
-        //     // 'password_confirmation'=>['required']
-        // ]);
         $request->validate([
             'id'=>'required|unique:users|max:100',
             'nombre'=>'required|max:40',
@@ -39,30 +25,34 @@ class RegistroAlumnoController extends Controller
             'password'=>'required|confirmed|max:100|min:8',
             'password_confirmation'=>'required|max:100|min:8'
         ]);
+        $usuario->id=$request->id;
+        $usuario->email=$request->email;
+        $usuario->password=bcrypt($request->password);
+        $usuario->tipoUsuario=0;
+        $alumno->id=$request->id;
         $alumno->nombre=$request->nombre;
         $alumno->primerApellido=$request->prim_apellido;
         $alumno->segundoApellido=$request->seg_apellido;
         $alumno->fechaIngresoEscuela=$request->fecha_ingreso_escuela;
         $alumno->carrera=$request->carrera;
-        $usuario->id=$request->id;
+        $alumno->fechaNacimiento=$request->fecha_nacimiento;
+        $usuario->save();
+        $alumno->save();
+        return redirect()->route('alumnos.show');
+    }
+    public function update(Request $request,Alumno $alumno){
+        $alumno=Alumno::findOrFail($request->id);
+        $usuario=User::findOrFail($request->id);
+        $alumno->nombre=$request->nombre;
+        $alumno->primerApellido=$request->prim_apellido;
+        $alumno->segundoApellido=$request->seg_apellido;
+        $alumno->carrera=$request->carrera;
+        $alumno->fechaNacimiento=$request->fecha_nacimiento;
+        $alumno->fechaIngresoEscuela=$request->fecha_ingreso_escuela;
         $usuario->email=$request->email;
-        $usuario->password=bcrypt($request->password);
-        $usuario->tipoUsuario=0;
+        $usuario->id=$request->id;
         $alumno->save();
         $usuario->save();
-        // Alumno::create([
-        //     'nombre'=>$request->input('nombre'),
-        //     'primerApellido'=>$request->input('prim_apellido'),
-        //     'segundoApellido'=>$request->input('seg_apellido'),
-        //     'fechaIngresoEscuela'=>$request->input('fecha_ingreso_escuela'),
-        //     'carrera'=>$request->input('carrera')
-        // ]);
-        // User::create([
-        //     'idUsuario'=>$request->input('nro_control'),
-        //     'correo'=>$request->input('correo'),
-        //     'password'=>$request->input('password'),
-        //     'tipoUsuario'=>0
-        // ]);
-        return redirect()->route('inicio');
+        return redirect()->route('alumnos.show');
     }
 }
