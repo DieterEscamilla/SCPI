@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="{{asset('../resources/css/titulo_seccion_styles.css')}}">
 <link rel="stylesheet" href="{{asset('../resources/css/agregar_formulario_styles12.css')}}">
 <link rel="stylesheet" href="{{asset('../resources/css/barra_scroll_styles.css')}}">
-<link rel="stylesheet" href="{{asset('../resources/css/editar_formulario_styles.css')}}">
+<link rel="stylesheet" href="{{asset('../resources/css/editar_formulario_styles2.css')}}">
 <link rel="icon" href="{{asset('../resources/img/logo_tecnm.png')}}" type="image/png">
 @section('header')
     @extends('layouts.partials.barraSup')
@@ -45,7 +45,9 @@
                         <td class="elementos_ocultos_tabla">{{$alumno->fechaNacimiento}}</td>
                         <td class="tdb elementos_ocultos_tabla">{{$alumno->fechaIngresoEscuela}}</td>
                         <td class="tdb">
-                            <img class="iconos_acciones_tabla" src="{{asset('../resources/img/iconos/icono_eliminar.svg')}}" alt="">
+                            @can('avanzado.eliminar')
+                                <img class="iconos_acciones_tabla" src="{{asset('../resources/img/iconos/icono_eliminar.svg')}}" alt="">
+                            @endcan()
                             <img class="iconos_acciones_tabla btn_lapiz_actualizar_modal" src="{{asset('../resources/img/iconos/icono_actualizar.svg')}}" alt="">
                             <img class="iconos_acciones_tabla btn_ojo_ver_detalles_modal" src="{{asset('../resources/img/iconos/ojo_icono.svg')}}" alt="">
                         </td>
@@ -184,18 +186,30 @@
                                 <small class="leyenda_error_form">{{$message}}</small>
                             @enderror
                         </div>
+                        <div class="cont_lbl_input">
+                            <label class="lbl_create" for="">Permisos del usuario:</label>
+                            {{-- En caso de que este campo deba ir en el form, preguntar todas las áreas de adscipción existentes --}}
+                            <select class="input_create" name="permisos" value="{{old('permisos')}}" required>
+                                <option value="">Seleccionar área...</option>
+                                <option value="avanzado">Avanzado</option>
+                                <option value="basico">Básico</option>
+                            </select>
+                            @error('permisos')
+                                <small class="leyenda_error_form">*{{$message}}</small>
+                            @enderror
+                        </div>
                     </div>
                     
                     <div class="cont_btns_formulario">
-                        <input class="btn_aceptar estilos_compartidos_btn" id="agregar_btn" type="submit" value="Agregar">
+                        <input class="btn_aceptar estilos_compartidos_btn" id="" type="submit" value="Agregar">
                         <button type="button" class="btn_cerrar btn_cancelar estilos_compartidos_btn" value="Cancelar">Cancelar y volver al listado</button>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="overlay_editar_alumno" id="overlay_editar_alumno">
+        <div class="overlay_editar" id="overlay_editar_alumno">
             <div class="modal_editar_alumno">     
-                <form class="form_editar_alumno" id="form_editar_alumno" action="{{route('alumnos.update')}}" method="POST">
+                <form class="form_editar" id="form_editar_alumno" action="{{route('alumnos.update')}}" method="POST">
                     <div class="cont_titulo_form_agreagr btn_cerrar" id="btn_cerrar_modal">
                         <h3>Editar datos de un alumno</h3>
                         <img class="icono_cerrar_form cerrar_modal_edit" src="{{asset('../resources/img/iconos/cerrar_icon.svg')}}" alt="">
@@ -271,7 +285,7 @@
                     </div>
                     
                     <div class="cont_btns_formulario">
-                        <input class="btn_aceptar estilos_compartidos_btn" id="agregar_btn" type="submit" value="Agregar">
+                        <input class="btn_aceptar estilos_compartidos_btn" id="" type="submit" value="Agregar">
                         <button type="button" class="btn_cerrar btn_cancelar estilos_compartidos_btn cerrar_modal_edit" value="Cancelar">Cancelar y volver al listado</button>
                     </div>
                 </form>

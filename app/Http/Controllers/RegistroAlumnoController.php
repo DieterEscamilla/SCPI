@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use App\Models\Alumno;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 class RegistroAlumnoController extends Controller
 {
     public function show(){
@@ -36,6 +38,13 @@ class RegistroAlumnoController extends Controller
         $alumno->fechaIngresoEscuela=$request->fecha_ingreso_escuela;
         $alumno->carrera=$request->carrera;
         $alumno->fechaNacimiento=$request->fecha_nacimiento;
+        if($request->permisos=='avanzado'){
+            $usuario->find($request->id);
+            $usuario->assignRole('avanzado');
+        }else if($request->permisos=='basico'){
+            $usuario->find($request->id);
+            $usuario->assignRole('basico');
+        }
         $usuario->save();
         $alumno->save();
         return redirect()->route('alumnos.show');

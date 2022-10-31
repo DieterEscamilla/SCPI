@@ -32,8 +32,9 @@ Route::get('inicio',function(){
 // Route::get('nuevo-profesor',function(){
 //     return view('nuevoProfesor');
 // })->name('create.profesor');
-Route::get('nuevo-profesor',[RegistroProfesorController::class,'show'])->name('profregistro.show');
-Route::post('nuevo-profesor',[RegistroProfesorController::class,'store'])->name('profregistro.store');
+// Route::get('nuevo-profesor',[RegistroProfesorController::class,'show'])->name('profregistro.show');
+Route::post('mostrar-profesores',[RegistroProfesorController::class,'store'])->name('profregistro.store');
+Route::put('mostrar-profesores',[RegistroProfesorController::class,'update'])->name('profesores.update'); 
 Route::get('nuevo-alumno',[RegistroAlumnoController::class,'show'])->name('alumnoregistro.show');
 Route::post('nuevo-alumno',[RegistroAlumnoController::class,'store'])->name('alumnoregistro.store');
 Route::put('editar-alumno',[RegistroAlumnoController::class,'update'])->name('alumnos.update');

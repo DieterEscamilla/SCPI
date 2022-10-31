@@ -43,7 +43,5 @@ const listaBtnMostrarEditarAlumno=document.querySelectorAll('.btn_lapiz_actualiz
     listaBtnCerrarModalEditarAlumno.forEach(elemento=>{
         elemento.addEventListener('click',()=>{
             document.getElementById('overlay_editar_alumno').style.display='none';
-        });
-        
-        
+        }); 
     });

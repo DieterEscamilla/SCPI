@@ -14,7 +14,7 @@ class VerProfesorController extends Controller
         // $profesores=Profesore::all();
         //$usuarios_correo=User::select('email')->get();
         // return view('profesores',compact('profesores'));
-        $datos=DB::table('profesores')->select('*')->join('users','users.id','=','profesores.numeroTarjeta')->where('users.tipoUsuario',1)->get();
+        $datos=DB::table('profesores')->select('*')->join('users','users.id','=','profesores.id')->where('users.tipoUsuario',1)->get();
         // $fecha_nacimiento=DB::table('profesores')->select('fechaNacimiento')->get();
         // $edad=Carbon::parse($fecha_nacimiento)->age;
         //  $fecha_actual=Carbon::now();

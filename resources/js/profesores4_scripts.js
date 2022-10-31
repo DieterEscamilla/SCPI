@@ -17,7 +17,7 @@ listaIconoVerMasTabla.forEach(iconoVerMasTabla=>{
         let numero_elementos=(e.currentTarget.parentNode.parentNode.childElementCount)-1;
         let elementoActualRecorrido=e.currentTarget.parentNode;
         // let objeto_datos_modal={};
-        let i=8;
+        let i=9;
         while(numero_elementos>0){
             arregloInfoModal[i]=elementoActualRecorrido.previousElementSibling.textContent;
             elementoActualRecorrido=elementoActualRecorrido.previousElementSibling;

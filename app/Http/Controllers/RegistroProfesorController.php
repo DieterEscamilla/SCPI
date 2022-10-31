@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use App\Models\Profesore;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
 class RegistroProfesorController extends Controller
 {
     public function show(){
@@ -33,7 +36,7 @@ class RegistroProfesorController extends Controller
     $usuario->email=$request->email;
     $usuario->password=bcrypt($request->password);
     $usuario->tipoUsuario=1;
-    $profesor->numeroTarjeta=$request->id;
+    $profesor->id=$request->id;
     $profesor->nombre=$request->nombre;
     $profesor->primerApellido=$request->prim_apellido;
     $profesor->segundoApellido=$request->seg_apellido;
@@ -43,8 +46,34 @@ class RegistroProfesorController extends Controller
     $profesor->gradoEscolar=$request->grado_escolar;
     $profesor->rfc=$request->rfc;
     $profesor->fechaIngresoInstitucion=$request->fecha_ingreso_institucion;
+    if($request->permisos=='avanzado'){
+        $usuario->find($request->id);
+        $usuario->assignRole('avanzado');
+    }else if($request->permisos=='basico'){
+        $usuario->find($request->id);
+        $usuario->assignRole('basico');
+    }
     $usuario->save();
     $profesor->save();
     return redirect()->route('profesores.show');
+    }
+    public function update(Request $request,Profesore $profesor){
+        $profesor=Profesore::findOrFail($request->id);
+        $usuario=User::findOrFail($request->id);
+        $profesor->nombre=$request->nombre;
+        $profesor->primerApellido=$request->prim_apellido;
+        $profesor->segundoApellido=$request->seg_apellido;
+        $profesor->fechaNacimiento=$request->fecha_nacimiento;
+        $profesor->fechaIngresoInstitucion=$request->fecha_ingreso_institucion;
+        $profesor->fechaIngresoSep=$request->fecha_ingreso_sep;
+        $profesor->rfc=$request->rfc;
+        $profesor->gradoEscolar=$request->grado_escolar;
+        $profesor->areaAdscripcion=$request->area_adscripcion;
+        $usuario->email=$request->email;
+        $usuario->id=$request->id;
+        $profesor->save();
+        $usuario->save();
+        return redirect()->route('profesores.show');
+
     }
 }
