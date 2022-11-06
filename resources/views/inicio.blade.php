@@ -22,3 +22,5 @@
     {{-- <script src="{{asset('../resources/js/menuLateral_scripts2.js')}}"></script> --}}
     <script src="{{asset('/js/menuLateral_scripts2.js')}}"></script>
 @endsection
+
+
