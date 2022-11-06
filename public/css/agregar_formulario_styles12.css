@@ -1,0 +1,113 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    font-family:'Open Sans','Heveltica','Arial';
+}
+select{
+    color:#000;
+}
+
+.leyenda_error_form{
+    color:#940808;
+}
+
+main{
+    /* margin-top:100px; */
+    width:100%;
+    /* background:url('../img/logo_tecnm_extendido4.png') no-repeat  left; */
+}
+
+.form_create_alumno{
+    display:flex;
+    flex-direction:column;
+    margin:30px auto;
+    padding:50px;
+    width:80%;
+    height:80%;
+    /* width:85%; */
+    /* border-top:2px solid #1B396A; */
+    background:#E6E6E6;
+    border:1px solid #1B396A;
+    box-shadow:3px 3px 10px;
+    border-radius:10px;
+    overflow-y:scroll;
+}
+.tira_provisional_inputs{
+    display:flex;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+    width:100%;
+}
+.cont_lbl_input{
+    display:flex;
+    flex-direction:column;
+    margin:20px;
+}
+.input_create{
+    height:30px;
+    padding: 5px;
+    outline:none;
+    border:1px solid #1B396A;
+    /* border:1px solid #C00000; */
+    background-color:#E5E5E5;
+    width:290px;
+    border-radius:5px;
+    font-size:15px;
+}
+.input_create:focus{
+    border:1px solid #07A460;
+}
+.cont_btns_formulario{
+    display:flex;
+    justify-content:center;
+    width:98%;
+    margin:50px auto 0 auto;
+}
+.estilos_compartidos_btn{
+    border-radius:7px;
+    color:#000;
+    padding:10px 30px;
+    border:none;
+    font-size:16px;
+    cursor:pointer;
+}
+.btn_aceptar{
+    background-color:#3BCF2C;
+    margin-right:25px;
+}
+.btn_aceptar:hover{
+    background-color:#0F8204;
+    color:#F2F2F2;
+}
+.btn_cancelar{
+    background-color:#C82828;
+    margin-left:25px;
+    
+}
+.btn_cancelar:hover{
+    background-color:#940808;
+    color:#F2F2F2;
+}
+.overlay{
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background-color:rgba(0,0,0,.7);
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+.cont_titulo_form_agreagr{
+    display:flex;
+    justify-content: space-between;
+    background-color:#E6E6E6;
+    margin-bottom:30px;
+}
+.icono_cerrar_form{
+    width:15px;
+    cursor:pointer;
+}
