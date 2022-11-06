@@ -15,7 +15,8 @@
 @endsection
 @section('main')
     <p>Ésta es la página de inicio</p>
-    <a href="{{route('alumnos.show')}}">Ver alumnos</a>
+    {{-- <a href="{{route('alumnos.show')}}">Ver alumnos</a> --}}
+    <a href="{{route('mostrar-alumnos')}}">Ver alumnos</a>
     <a href="{{route('profesores.show')}}">Ver profesores</a>
 @endsection
 @section('scripts')
